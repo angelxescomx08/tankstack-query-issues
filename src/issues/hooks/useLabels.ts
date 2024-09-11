@@ -18,17 +18,17 @@ export const useLabels = () => {
         description: null,
       } satisfies GithubLabel,
     ],
-    initialData: [
-      {
-        id: 196858374,
-        node_id: "MDU6TGFiZWwxOTY4NTgzNzQ=",
-        url: "https://api.github.com/repos/facebook/react/labels/CLA%20Signed",
-        name: "CLA Signed",
-        color: "e7e7e7",
-        default: false,
-        description: null,
-      } satisfies GithubLabel,
-    ],
+    // initialData: [
+    //   {
+    //     id: 196858374,
+    //     node_id: "MDU6TGFiZWwxOTY4NTgzNzQ=",
+    //     url: "https://api.github.com/repos/facebook/react/labels/CLA%20Signed",
+    //     name: "CLA Signed",
+    //     color: "e7e7e7",
+    //     default: false,
+    //     description: null,
+    //   } satisfies GithubLabel,
+    // ],
   });
 
   return {
