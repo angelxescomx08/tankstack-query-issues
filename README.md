@@ -10,6 +10,8 @@ Para instalar el proyecto, primero se debe clonar el repositorio:
 git clone
 ```
 
+Obtener las variables de entorno del archivo `.env.example` y crear un archivo `.env` con las mismas variables.
+
 Luego, se debe instalar las dependencias:
 
 ```bash
