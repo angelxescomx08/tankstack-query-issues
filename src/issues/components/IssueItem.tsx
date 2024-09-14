@@ -56,6 +56,17 @@ export const IssueItem = ({ issue }:Props) => {
         <span className="text-gray-500">
           #{issue.number} opened 2 days ago by{' '}
           <span className="font-bold">{issue.user.login}</span>
+          <div className='flex flex-wrap'>
+            {issue.labels.map((label) => (
+              <span
+                key={label.id}
+                className="px-2 py-1 mr-2 mt-2 text-xs text-white rounded-md"
+                style={{ backgroundColor: `#${label.color}` }}
+              >
+                {label.name}
+              </span>
+            ))}
+          </div>
         </span>
       </div>
 
