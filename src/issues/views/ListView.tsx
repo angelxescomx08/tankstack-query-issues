@@ -9,7 +9,9 @@ export const ListView = () => {
 
   const [state, setState] = useState<State>(State.All);
   const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
-  const { issuesQuery } = useIssues({ state, selectedLabels });
+  const { 
+    page, issuesQuery, nextPage, previousPage 
+  } = useIssues({ state, selectedLabels });
   const issues = issuesQuery.data ?? [];
 
   const onLabelSelect = (label: string) => {
@@ -26,11 +28,29 @@ export const ListView = () => {
         {
           issuesQuery.isLoading ? (
             <LoadingSpinner />
-          ) : <IssueList 
-                state={state} 
-                onStateChange={setState}
-                issues={issues} 
-                />
+          ) : <>
+            <IssueList 
+              state={state} 
+              onStateChange={setState}
+              issues={issues} 
+            />
+            <div className='flex justify-between items-center'>
+              <button 
+                onClick={previousPage}
+                className='p-2 bg-blue-500 rounded-md hover:bg-blue-700 transition-all'>
+                Anteriores
+              </button>
+
+              <span>{page}</span>
+
+              <button 
+                onClick={nextPage}
+                className='p-2 bg-blue-500 rounded-md hover:bg-blue-700 transition-all'>
+                Siguientes
+              </button>
+            </div>
+          </>
+          
         }
         
       </div>
